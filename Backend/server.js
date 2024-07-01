@@ -18,6 +18,10 @@ const app = express() ;
 app.use(express.json())
 app.use(cors())
 
+const path = require("path");
+
+app.use(express.static(path.join(__dirname, "build")));
+
 app.get('/', (req,res)=>{
     res.send('Welcome to the Home');
 })
